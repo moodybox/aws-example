@@ -1,0 +1,209 @@
+<!DOCTYPE <!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Form</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <!-- Styles -->
+    <link rel="stylesheet" type="text/css" href="css/bootstrap-flatly.css" />
+    <link rel="stylesheet" type="text/css" href="css/main.css" />
+
+    <!-- Scripts -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous" defer></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous" defer></script>
+
+</head>
+
+<body>
+    <nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarColor01" aria-controls="navbarColor01"
+            aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarColor01">
+            <ul class="navbar-nav mr-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item active">
+                    <a class="nav-link" href="form.html">Register Device</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="login.html">Admin</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="container">
+        </br>
+        <div class="row">
+            <div class="col"></div>
+            <div class="col-10">
+                <div class="card">
+                    <div class="card-header">
+                        Asset Management Form
+                    </div>
+                    <div class="card-body">
+                        <form id="item-form">
+                            <fieldset>
+                                <div class="row">
+                                    <div class="col-6">
+
+                                        <!-- Asset ID -->
+                                        <div class="form-group">
+                                            <label class="col-form-label" for="assetID">Asset ID</label>
+                                            <input type="text" class="form-control" placeholder="ID" onchange="validateAssetId()"
+                                                name="assetID" id="assetID">
+                                            <div class="invalid-feedback">Please enter a 10 digit alpha-numeric asset ID.</div>
+                                        </div>
+
+                                        <!-- Current Assigned Location/Office -->
+                                        <div class="form-group">
+                                            <label class="col-form-label" for="assetLocation">Current Assigned
+                                                Location/Office</label>
+                                            <select class="form-control" onchange="validateAssetLocation()" name="assetLocation"
+                                                id="assetLocation">
+                                                <option> -- </option>
+                                                <option>Chicago</option>
+                                                <option>Denver</option>
+                                                <option>Los Angeles</option>
+                                                <option>Salt Lake City</option>
+                                                <option>New York City</option>
+                                                <option>Seattle</option>
+                                                <option>Houston</option>
+                                                <option>San Franscisco</option>
+                                                <option>Washington D.C.</option>
+                                                <option>Boston</option>
+                                                <option>Miami</option>
+                                                <option>Atlanta</option>
+                                            </select>
+                                            <div class="invalid-feedback">Please select a location.</div>
+                                        </div>
+
+                                        <!-- Organizational Tag -->
+                                        <div class="form-group">
+                                            <label class="col-form-label" for="organizationalTag">Organizational Tag</label>
+                                            <input type="text" name="organizationalTag" class="form-control"
+                                                placeholder="Tag" onchange="validateOrganizationalTag()" name="organizationalTag"
+                                                id="organizationalTag">
+                                            <div class="invalid-feedback">Please enter an organizational tag.</div>
+                                        </div>
+
+                                        <!-- Manufacturer -->
+                                        <div class="form-group">
+                                            <label class="col-form-label" for="manufacturer">Manufacturer</label>
+                                            <input type="text" class="form-control" placeholder="Name" onchange="validateManufacturer()"
+                                                name="manufacturer" id="manufacturer">
+                                            <div class="invalid-feedback">Please enter a manufacturer.</div>
+                                        </div>
+
+                                        <!-- Manufacturer Part# -->
+                                        <div class="form-group">
+                                            <label class="col-form-label" for="manufacturerPart">Manufacturer Part
+                                                Number</label>
+                                            <input type="Text" class="form-control" placeholder="Part Number" onchange="validateManufacturerPart()"
+                                                name="manufacturerPart" id="manufacturerPart">
+                                            <div class="invalid-feedback">Please anter a manufacturer part number.</div>
+                                        </div>
+                                    </div>
+                                    <div class="col-6">
+
+                                        <!-- Description -->
+                                        <div class="form-group">
+                                            <label class="col-form-label" for="description">Description</label>
+                                            <textarea class="form-control" placeholder="Write description here" name="description"
+                                                onchange="validateDescription()" id="description" rows="2"></textarea>
+                                            <div class="invalid-feedback">Please enter a description</div>
+                                        </div>
+
+                                        <!-- Month Implemented -->
+                                        <div class="form-group">
+                                            <label class="col-form-label" for="implementationMonth">Month Implemented</label>
+                                            <select class="form-control" onchange="validateImplementationMonth()" name="implementationMonth"
+                                                id="implementationMonth">
+                                                <option> -- </option>
+                                                <option>January</option>
+                                                <option>February</option>
+                                                <option>March</option>
+                                                <option>April</option>
+                                                <option>May</option>
+                                                <option>June</option>
+                                                <option>July</option>
+                                                <option>August</option>
+                                                <option>September</option>
+                                                <option>October</option>
+                                                <option>November</option>
+                                                <option>December</option>
+                                            </select>
+                                            <div class="invalid-feedback">Please select the implementation month.</div>
+                                        </div>
+
+                                        <!-- Year Implemented -->
+                                        <div class="form-group">
+                                            <label class="col-form-label" for="implementationYear">Year Implemented</label>
+                                            <input type="number" class="form-control" placeholder="1950 - 2018"
+                                                onchange="validateImplementationYear()" name="implementationYear" id="implementationYear">
+                                            <div class="invalid-feedback">Please enter the implementation year between
+                                                1950 and 2018.</div>
+                                        </div>
+
+                                        <!-- Maintenance Notes -->
+                                        <div class="form-group">
+                                            <label class="col-form-label" for="maintenanceNotes">Maintenance Notes</label>
+                                            <textarea class="form-control" placeholder="Write maintenance notes here"
+                                                name="maintenanceNotes" id="maintenanceNotes" rows="5"></textarea>
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- Submit Button -->
+                                <div class="row justify-content-center">
+                                    <button type="submit" class="btn btn-primary" id="submit-btn">Submit</button>
+                                </div>
+
+                            </fieldset>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            <div class="col"></div>
+        </div>
+    </div>
+
+    <!-- Confirmation Modal -->
+    <div id="modal-confirmation" class="modal">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title">Form Submitted</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <p>Your form has been successfully submitted. </p>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" onclick="goAdmin()" class="btn btn-primary" data-dismiss="modal">View List</button>
+                    <button type="button" onclick="clearForm()" class="btn btn-secondary">Submit new Form</button>
+                    <button type="button" onclick="goHome()" class="btn btn-secondary" data-dismiss="modal">Home</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="js/vendor/jquery-3.1.0.js"></script>
+    <script src="js/vendor/aws-cognito-sdk.min.js"></script>
+    <script src="js/vendor/amazon-cognito-identity.min.js"></script>
+    <script src="js/config.js"></script>
+    <!-- <script src="js/cognito-auth.js"></script> -->
+    <script src="js/requests.js"></script>
+</body>
+
+</html>
